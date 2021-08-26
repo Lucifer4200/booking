@@ -1,0 +1,223 @@
+//?===== booking area css start ====?//
+.booking-area {
+    padding: 30px 0;
+    .nav {
+        width: 100%;
+        margin-bottom: 16px;
+        border: 1px solid $border-color;
+        justify-content: space-between;
+        .nav-item {
+            width: calc(100% / 3);
+            text-align: center;
+            &:last-child {
+                button.nav-link {
+                    border-right: none;
+                }
+            }
+            button.nav-link {
+                width: 100%;
+                border: 0;
+                margin: 0;
+                padding: 5px;
+                text-transform: uppercase;
+                border-right: 1px solid $border-color;
+                display: inline-block;
+                &.active {
+                    color: #000;
+                    font-weight: 600;
+                    background: skyblue;
+                }
+            }
+        }
+    }
+    .tab-content {
+        .tab-pane {
+            .booking-form {
+                .form-title {
+                    h5 {
+                        margin: 0;
+                        text-align: center;
+                        padding-bottom: 10px;
+                        text-transform: uppercase;
+                    }
+                }
+                form {
+                    .input-item {
+                        padding-bottom: 15px;
+                        .input-title {
+                            h6 {
+                                margin-bottom: 5px;
+                                padding-bottom: 5px;
+                                font-size: 14px;
+                                text-transform: uppercase;
+                                border-bottom: 1px solid #000;
+                            }
+                        }
+                        .service-select {
+                            @extend %flex;
+                            align-items: center;
+                            select.form-select {
+                                width: calc(100% - 15%);
+                                &:focus {
+                                    box-shadow: none;
+                                }
+                            }
+                            .services-icon {
+                                width: calc(100% - 85%);
+                                button.ico-btn {
+                                    background: none;
+                                    height: 36px;
+                                    width: 36px;
+                                    line-height: 36px;
+                                    text-align: center;
+                                    border-radius: 3px;
+                                    margin-left: 5px;
+                                    border: 1px solid $border-color
+                                }
+                            }
+                        }
+                        .drop-select {
+                            #select2, #select2Booking, #selectStaff {
+                                border-radius: 5px;
+                                max-height: 100px;
+                                overflow-y: scroll;
+                                border: 1px solid $border-color;
+                                span {
+                                    &.remove-service {
+                                        font-weight: 500;
+                                        font-size: 14px;
+                                        padding: 10px;
+                                        display: inline-block;
+                                        &::before {
+                                            font-weight: 900;
+                                            margin-right: 10px;
+                                        }
+                                    }
+                                    &.add-time {
+                                        font-size: 12px;
+                                        text-align: right;
+                                        padding-left: 25px;
+                                    }
+                                }
+                                p.remove-staff {
+                                    margin: 0;
+                                    font-size: 12px;
+                                    padding: 10px 10px 0;
+                                    &::before {
+                                        margin-right: 10px;
+                                    }
+                                }
+                            }
+                        }
+                        .add-event {
+                            button.btn {
+                                width: 100%;
+                                background: skyblue;
+                            }
+                        }
+                        .event-content {
+                            padding: 10px;
+                            margin-top: 15px;
+                            border-radius: 3px;
+                            border: 1px solid #000;
+                            .event-item {
+                                @extend %flex;
+                                margin: 5px;
+                                padding: 5px;
+                                border-radius: 5px;
+                                border: 1px solid #3f3f3f;
+                                align-items: end;
+                                .item-icon {
+                                    button {
+                                        background: none;
+                                    }
+                                }
+                                .item-text {
+                                    padding-left: 10px;
+                                    h6 {
+                                        margin: 0;
+                                    }
+                                    p {
+                                        margin: 0;
+                                        font-size: 12px;
+                                    }
+                                }   
+                                .event-pop {
+                                    padding-left: 12px;
+                                    button {
+                                        background: none;
+                                        i {
+                                            font-size: 30px;
+                                            color: #000;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    } 
+                }
+            }
+            .calender-title {
+                h5 {
+                    margin: 0;
+                    text-align: center;
+                    padding-bottom: 10px;
+                    text-transform: uppercase;
+                }
+            }
+            .customer-table {
+                margin: 0 auto;
+                max-width: 800px;
+                .table-header {
+                    @extend %flex;
+                    margin-bottom: 25px;
+                    padding-bottom: 25px;
+                    align-items: center;
+                    border-bottom: 1px solid #000;
+                    .customerSearchbar {
+                        position: relative;
+                        width: 50%;
+                        input.form-control {
+                            padding-left: 40px;
+                            &:focus {
+                                box-shadow: none;
+                            }
+                        }
+                        i {
+                            position: absolute;
+                            top: 50%;
+                            left: 15px;
+                            transform: translateY(-50%);
+                        }
+                    }
+                    .customerBtn {
+                        padding-left: 20px;
+                        button.btn {
+                            height: 38px;
+                            border: 1px solid #000;
+                            background: transparent;
+                            span, i {
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+                .table-responsive {
+                    .table-striped>tbody>tr:nth-of-type(odd) {
+                        background: skyblue;
+                    }
+                    table {
+                        thead {
+                            tr {
+                                th {
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//?===== booking area css start ====?//

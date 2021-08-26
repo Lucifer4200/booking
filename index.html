@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- event css -->
+    <link rel="stylesheet" href="assets/css/custom-calendar.css">
+    <!-- pretty css -->
+    <link rel="stylesheet" href="assets/css/pretty-calendar.css">
+    <!-- jquery ui css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+    <!-- jquery time picker css -->
+    <link rel="stylesheet" href="assets/css/timepicker.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="assets/sass/style.css">
+
+    <title>Booking</title>
+</head>
+<body>
+
+    <!-- booking area start -->
+    <section class="booking-area">
+        <div class="container-fluid">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="booking-tab" data-bs-toggle="tab" data-bs-target="#booking" type="button" role="tab" aria-controls="booking" aria-selected="true">Booking</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="customer-tab" data-bs-toggle="tab" data-bs-target="#customer" type="button" role="tab" aria-controls="customer" aria-selected="false">Select Customer</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="payment-tab" data-bs-toggle="tab" data-bs-target="#payment" type="button" role="tab" aria-controls="payment" aria-selected="false">Payment</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="booking" role="tabpanel" aria-labelledby="booking-tab">
+                    <div class="row">
+                        <div class="col-lg-3 col-12">
+                            <div class="booking-form">
+                                <div class="form-title">
+                                    <h5>Create New Booking</h5>
+                                </div>
+                                <form action="">
+                                    <div class="input-item">
+                                        <div class="input-title">
+                                            <h6>booking Title</h6>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="title">Title</label>
+                                            <input type="text" class="form-control" id="title" placeholder="music recoding">
+                                        </div>
+                                    </div>
+                                    <div class="input-item">
+                                        <div class="input-title">
+                                            <h6>Select Date</h6>
+                                        </div>
+                                        <div class="input-group mt-2">
+                                            <input type="text" class="form-control" id="datepicker">
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="input-group m-1">
+                                                <label for="pickTime">Start</label>
+                                                <input type="text" class="timepicker form-control" id="pickTime">
+                                            </div>
+                                            <div class="input-group m-1">
+                                                <label for="pickTime">End</label>
+                                                <input type="text" class="timepicker form-control" id="pickTime">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-item">
+                                        <div class="input-title">
+                                            <h6>Select Service</h6>
+                                        </div>
+                                        <div class="service-select">
+                                            <select class="form-select" id="select1">
+                                                <option value="1">Add Service</option>
+                                                <option value="2">Video 1hr Session</option>
+                                                <option value="2">Production 2hr Session</option>
+                                            </select>
+                                            <div class="services-icon">
+                                               <button type="button" class="ico-btn" data-bs-toggle="modal" data-bs-target="#servicePrice"><i class="fa fa-eye"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="drop-select">
+                                            <div id="select2"></div>
+                                        </div>
+                                    </div>
+                                    <div class="input-item">
+                                        <div class="input-title">
+                                            <h6>Select Studio</h6>
+                                        </div>
+                                        <div class="input-sellect mt-2">
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Studio 1</option>
+                                                <option value="1">Studio 2</option>
+                                                <option value="2">Studio 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="input-item">
+                                        <div class="input-title">
+                                            <h6>Select Staff</h6>
+                                        </div>
+                                        <div class="input-sellect mt-2">
+                                            <select class="form-select" id="addStaff">
+                                                <option value="def" selected>Add Staff</option>
+                                                <option value="1" start="00:00" end="12:30">Member 1</option>
+                                                <option value="2" start="00:00" end="12:00">Member 2</option>
+                                                <option value="3" start="00:00" end="12:10">Member 3</option>
+                                                <option value="4" start="00:00" end="12:25">Member 4</option>
+                                                <option value="5" start="00:00" end="12:40">Member 5</option>
+                                            </select>
+                                        </div>
+                                        <div class="drop-select">
+                                            <div id="selectStaff"></div>
+                                        </div>
+                                    </div>
+                                    <div class="input-item">
+                                        <div class="add-event">
+                                            <button type="button" class="btn"><span>Add Event To Booking</span></button>
+                                        </div>
+                                        <div class="event-content">
+                                            <div class="event-item event-item-1" serial="1">
+                                                <div class="item-icon">
+                                                    <button type="button" class="item-remove item-remove-1" serial="1"><i class="fa fa-times"></i></button>
+                                                </div>
+                                                <div class="item-text">
+                                                    <h6>Event ID : 1</h6>
+                                                    <p class="date">01-01-2022</p>
+                                                </div>
+                                                <div class="event-pop">
+                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#eventPop"><i class="fa fa-eye"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="event-item event-item-2" serial="2">
+                                                <div class="item-icon">
+                                                    <button type="button" class="item-remove item-remove-2" serial="2"><i class="fa fa-times"></i></button>
+                                                </div>
+                                                <div class="item-text">
+                                                    <h6>Event ID : 2</h6>
+                                                    <p class="date">01-01-2022</p>
+                                                </div>
+                                            </div>
+                                            <div class="event-item event-item-3" serial="3">
+                                                <div class="item-icon">
+                                                    <button type="button" class="item-remove item-remove-3" serial="3"><i class="fa fa-times"></i></button>
+                                                </div>
+                                                <div class="item-text">
+                                                    <h6>Event ID : 3</h6>
+                                                    <p class="date">01-01-2022</p>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                    <div class="input-btn">
+                                        <button type="button" class="btn w-100 bg-success"><span>Finalize Booking</span></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-12">
+                            <div class="calender-title">
+                                <h5>Booking Calender</h5>
+                            </div>
+                            <div id="navWrap"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="customer" role="tabpanel" aria-labelledby="customer-tab">
+                    <div class="customer-table">
+                        <div class="table-header">
+                            <div class="customerSearchbar">
+                                <i class="fa fa-search"></i>
+                                <input type="text" id="itemSearch" class="form-control" placeholder="Search...">
+                            </div>
+                            <div class="customerBtn">
+                                <button type="button" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal"><span><i class="fa fa-plus me-2"></i></span><span>Add Customer</span></button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Surname</th>
+                                    <th scope="col">Artist</th>
+                                    <th scope="col">...</th>
+                                    <th scope="col">...</th>
+                                  </tr>
+                                </thead>
+                                <tbody id="myTable">
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@mdo</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                    <td>@fat</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">4</th>
+                                    <td>Larry the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">5</th>
+                                    <td>Larry the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">6</th>
+                                    <td>Larry the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur ad voluptatem quisquam rem distinctio sapiente hic modi sequi laboriosam assumenda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- booking area ends  -->
+
+    <!-- add customer start -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="claim-form common-form">
+                        <div class="form-title">
+                            <h4>Send us a message</h4>
+                        </div>
+                        <form action="">
+                            <div class="input-group mb-4">
+                                <label for="fName">Full Name *</label>
+                                <input type="text" class="form-control" id="fName" placeholder="Your Name">
+                            </div>
+                            <div class="input-group mb-4">
+                                <label for="fName">Email *</label>
+                                <input type="text" class="form-control" id="fName" placeholder="Your email">
+                            </div>
+                            <div class="input-group mb-3">
+                                <label for="phone">Phone *</label>
+                                <input type="number" class="form-control" id="phone" placeholder="+61">
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group mb-4">
+                                    <label for="message">Message *</label>
+                                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Please describe what happened"></textarea>
+                                </div>
+                            </div>
+                            <div class="input-btn">
+                                <button type="submit" class="btn"><span>Add</span></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- add customer ends  -->
+
+    <!-- services modal start -->
+    <div class="modal fade" id="servicePrice" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content border border-2 border-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Service Studio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="service-price">
+                        <div class="row">
+                            <div class="col-sm-6 col-12">
+                                <div class="price-item">
+                                    <div class="item-title">
+                                        <h6 class="text-decoration-underline">Studio 1</h6>
+                                    </div>
+                                    <div class="item-text">
+                                        <p class="mb-0">Production 2hr Session - $200</p>
+                                        <span class="small">Driscription : jddf</span>
+                                        <p class="mb-0 mt-3">Production 2hr Session - $100</p>
+                                        <span class="small">Driscription : jddf</span>
+                                        <a href="#0" class="d-block text-danger text-decoration-underline mt-4">Discount $0</a>
+                                        <div class="total-price mt-3">
+                                            <strong>Total: $300</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-12">
+                                <div class="price-item">
+                                    <div class="item-title">
+                                        <h6 class="text-decoration-underline">Studio 2</h6>
+                                    </div>
+                                    <div class="item-text">
+                                        <p class="mb-0">Production 2hr Session - $100</p>
+                                        <span class="small">Driscription : jddf</span>
+                                        <p class="mb-0 mt-3">Production 2hr Session - $100</p>
+                                        <span class="small">Driscription : jddf</span>
+                                        <a href="#0" class="d-block text-danger text-decoration-underline mt-4">Discount $10</a>
+                                        <div class="total-price mt-3">
+                                            <strong>Total: $190</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- services modal ends  -->
+
+    <!-- event modal start -->
+    <div class="modal fade" id="eventPop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content border border-2 border-dark">
+                <div class="modal-header justify-content-center">
+                    <h5 class="text-danger text-uppercase mb-0">Event Booking Finalied : False</h5>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- event modal start -->
+
+
+
+    <!-- optional js -->
+    <script src="assets/js/vendors.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/pretty-calendar.js"></script> 
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/timepicker.min.js"></script>
+    <script src="assets/js/function.js"></script>
+
+    <script>
+
+        /*
+        *
+        * STANDARD EVENT ARRAY - ONE ARRAY WHICH CONTAINS INDIVIDUAL EVENT ARRAYS
+        * INDIVIDUAL EVENTS ARRAYS CONTAIN STRINGS W/ THE FOLLOWING:
+        * [dayOfWeek, standardTime, eventTitle, backgroundColor]
+        *
+        */
+        
+        var events = [];
+        events[0] = [];
+        events[0][0] = "Sunday";
+        events[0][1] = "3:00pm";
+        events[0][2] = "Just a sample event"
+        events[0][3] = "#c0c0c0";
+        events[1] = [];
+        events[1][0] = "Monday";
+        events[1][1] = "12:00pm";
+        events[1][2] = "Another event"
+        events[1][3] = "#8FD8D8";
+        events[2] = [];
+        events[2][0] = "Thursday";
+        events[2][1] = "5:00pm";
+        events[2][2] = "This is what happens when"
+        events[2][3] = "orange";
+        events[3] = [];
+        events[3][0] = "Thursday";
+        events[3][1] = "5:30pm";
+        events[3][2] = "two events are side by side"
+        events[3][3] = "purple";
+        
+        /*
+        *
+        * YOU CAN PASS AN ARRAY OF CUSTOM LABELS FOR EACH DAY
+        * BUT PRETTYCALENDAR DEFAULTS TO THE NAMES OF EACH DAY
+        *
+        */
+        
+        var weekday=new Array(7);
+        weekday[0]="Sun (Apr 13)";
+        weekday[1]="Mon (Apr 14)";
+        weekday[2]="Tue (Apr 15)";
+        weekday[3]="Wed (Apr 16)";
+        weekday[4]="Thu (Apr 17)";
+        weekday[5]="Fri (Apr 18)";
+        weekday[6]="Sat (Apr 19)";
+        
+        /*
+        *
+        * PrettyCalendar(eventArray, nameOfCalendarDiv, enableNavigation, customLabelArray)
+        * NAVIGATION HOOKS ARE function leftNav() AND function rightNav()
+        * IT IS UP TO YOU TO DEFINE THESE
+        *
+        */
+        
+        var prettyCal = new PrettyCalendar(events, "navWrap", false, weekday);
+    </script>
+</body>
+</html>
